@@ -60,8 +60,8 @@ def inflexion(verbo, persona, numero, polaridad):
     return verbo + sufijo_polaridad(polaridad) + sufijo_indicativo_persona_numero(verbo, persona, numero)
 
 verbo = st.text_input('verbo:', 'küpa')
-persona = st.text_input("¿quién participa? Elija 'primera', 'segunda' o 'tercera'", 'primera')
-numero = st.text_input("¿cuántos participan? Elija 'singular', 'dual' o 'plural'", 'singular')
-polaridad = st.text_input("polaridad' Elija 'positiva' o 'negativa'", 'negativa')
+persona = st.multiselect('¿quién participa? (persona)', ['primera', 'segunda' o 'tercera'])
+numero = st.multiselect('¿cuántos participan? (número)', ['singular', 'dual' o 'plural'])
+polaridad = st.multiselect('polaridad', ['positiva','negativa'])
 
 st.write(inflexion(verbo, persona, numero, polaridad))
